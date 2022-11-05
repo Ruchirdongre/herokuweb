@@ -3,7 +3,7 @@ const app = express();
 const server = require("http").Server(app);
 const io = require('socket.io')(server)
 const { v4: uuidv4 } = require('uuid');
-const port = process.env.PORT || 3030;
+const port =  3030;
 // const { ExpressPeerServer } = require('peer');
 // const peerServer = ExpressPeerServer(server, {
 //     deburg: true
@@ -29,18 +29,18 @@ app.get('/:room', (req, res) => {
 
 
 
-io.on('connection',socket => {
-    socket.on('join-room', (roomId,userId ) => {
+io.on('connection', socket => {
+    socket.on('join-room', (roomId, userId) => {
         console.log("joined room")
         socket.join(roomId);
-        
-        // socket.to(roomId).broadcast.emit('user-connected');
-        socket.broadcast.to(roomId).emit('user-connected',userId);
-        console.log(roomId,userId);
-        socket.on('disconnect',()=>{    
-                socket.broadcast.to(roomId).emit('user-disconnected',userId);
 
-            
+        // socket.to(roomId).broadcast.emit('user-connected');
+        socket.broadcast.to(roomId).emit('user-connected', userId);
+    console.log(roomId, userId);
+        socket.on('disconnect', () => {
+            socket.broadcast.to(roomId).emit('user-disconnected', userId);
+
+
         })
     })
 })

@@ -2,6 +2,7 @@
 // const { Stream } = require("stream");
 
 // const { prototype } = require("events");
+// import { Peer } from "peerjs";
 
 const socket = io('/')
 const videoGrid = document.getElementById('video-grid');
@@ -12,7 +13,7 @@ myVideo.muted = true;
 
 var peer = new Peer(undefined, {
     host: 'localhost',
-    port: '9000',
+    port:  '9000',
     path: '/myapp',
 });
 

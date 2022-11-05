@@ -5,8 +5,13 @@
   "main": "script.js",
   "scripts": {
     "dev": "nodemon server",
-    "start":"nodemon server.js"
-  },
+    "start": "nodemon server",
+    "starta": "peerjs --port 9000 --key peerjs --path /myapp"
+    
+    
+    
+    
+  },  
   "author": "",
   "license": "ISC",
   "dependencies": {
