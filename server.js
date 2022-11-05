@@ -3,6 +3,7 @@ const app = express();
 const server = require("http").Server(app);
 const io = require('socket.io')(server)
 const { v4: uuidv4 } = require('uuid');
+const port = process.env.PORT || 3030;
 // const { ExpressPeerServer } = require('peer');
 // const peerServer = ExpressPeerServer(server, {
 //     deburg: true
@@ -45,4 +46,4 @@ io.on('connection',socket => {
 })
 
 
-server.listen(3030);
+server.listen(port);
