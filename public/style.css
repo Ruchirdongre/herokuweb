@@ -1,0 +1,23 @@
+#video-grid{
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+
+}
+
+
+.page{
+    width: 100vw;
+    height: 100vh;
+    background-color: rgb(68, 67, 67);
+    background-position: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+video{
+
+    height: 240px;
+    width: 360px;
+    object-fit: cover;
+}
